@@ -1,54 +1,58 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<MPD profiles="urn:mpeg:dash:profile:isoff-live:2011" type="dynamic" availabilityStartTime="2025-06-25T06:06:52Z" minimumUpdatePeriod="PT4.0S" minBufferTime="PT4.0S" publishTime="2025-07-05T04:27:57.337Z" timeShiftBufferDepth="PT60.0S" suggestedPresentationDelay="PT4.0S" xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:cenc="urn:mpeg:cenc:2013" xmlns:mspr="urn:microsoft:playready" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 DASH-MPD.xsd">
-	<Period start="PT0S" id="1">
-	<BaseURL>https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel(TV3)/</BaseURL>
+<?xml version="1.0" encoding="UTF-8"?>
+<MPD
+  xmlns="urn:mpeg:dash:schema:mpd:2011"
+  xmlns:cenc="urn:mpeg:cenc:2013"
+  profiles="urn:mpeg:dash:profile:isoff-live:2011"
+  type="dynamic"
+  availabilityStartTime="2025-06-25T06:06:52Z"
+  minimumUpdatePeriod="PT4S"
+  minBufferTime="PT4S"
+  timeShiftBufferDepth="PT60S"
+  suggestedPresentationDelay="PT4S"
+  publishTime="2025-07-05T04:27:57Z">
 
-		<!-- Video Adaptation Set -->
-		<AdaptationSet mimeType="video/mp4" startWithSAP="1" segmentAlignment="true" par="16:9">
-			<ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" />
-			<ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" 
-							   value="Widevine"
-							   cenc:default_KID="ce43641a-061a-44fb-9d95-d986cfc9a68f">
-				<cenc:pssh>AAAAYnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAEISEM5DZBoGGkT7nZXZhs/Jpo8aDnF1aWNrcGxheW1lZGlhIhh6a05rR2dZYVJQdWRsZG1HejhtbWp3PT1I49yVmwY=</cenc:pssh>
-			</ContentProtection>
-			<SegmentTemplate timescale="10000000" presentationTimeOffset="0" media="$RepresentationID$_Segment-$Time$.m4v" initialization="$RepresentationID$_init.m4i">
-				<SegmentTimeline>
-					<S t="8580171564222" d="40000000" r="14" />
-				</SegmentTimeline>
-			</SegmentTemplate>
-			<Representation width="480" height="270" frameRate="25" codecs="avc1.428016" scanType="progressive" sar="1:1" id="1750831600175item-01item" bandwidth="500000" />
-			<Representation width="640" height="360" frameRate="25" codecs="avc1.4d4020" scanType="progressive" sar="1:1" id="1750831600175item-02item" bandwidth="1000000" />
-			<Representation width="960" height="540" frameRate="25" codecs="avc1.4d4029" scanType="progressive" sar="1:1" id="1750831600175item-03item" bandwidth="2000000" />
-			<Representation width="1280" height="720" frameRate="25" codecs="avc1.640029" scanType="progressive" sar="1:1" id="1750831600175item-04item" bandwidth="3000000" />
-			<Representation width="1920" height="1080" frameRate="25" codecs="avc1.64002a" scanType="progressive" sar="1:1" id="1750831600175item-05item" bandwidth="4000000" />
-		</AdaptationSet>
+  <Period id="1" start="PT0S">
+    <BaseURL>https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel(TV3)/</BaseURL>
 
-		<!-- Audio Adaptation Set -->
-		<AdaptationSet mimeType="audio/mp4" startWithSAP="1" lang="may" segmentAlignment="true">
-			<ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" />
-			<ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed" 
-							   value="Widevine"
-							   cenc:default_KID="ce43641a-061a-44fb-9d95-d986cfc9a68f">
-				<cenc:pssh>AAAAYnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAEISEM5DZBoGGkT7nZXZhs/Jpo8aDnF1aWNrcGxheW1lZGlhIhh6a05rR2dZYVJQdWRsZG1HejhtbWp3PT1I49yVmwY=</cenc:pssh>
-			</ContentProtection>
-			<SegmentTemplate timescale="10000000" presentationTimeOffset="0" media="$RepresentationID$_Segment-$Time$.m4a" initialization="$RepresentationID$_init.m4i">
-				<SegmentTimeline>
-					<S t="8580171790444" d="40106667" />
-					<S t="8580211897111" d="39680000" />
-					<S t="8580251577111" d="40106666" />
-					<S t="8580291683777" d="40106667" r="1" />
-					<S t="8580371897111" d="39680000" />
-					<S t="8580411577111" d="40106666" />
-					<S t="8580451683777" d="40106667" r="1" />
-					<S t="8580531897111" d="39680000" />
-					<S t="8580571577111" d="40106666" />
-					<S t="8580611683777" d="40106667" r="1" />
-					<S t="8580691897111" d="39680000" />
-					<S t="8580731577111" d="40106666" />
-				</SegmentTimeline>
-			</SegmentTemplate>
-			<Representation audioSamplingRate="48000" codecs="mp4a.40.5" id="1750831600175item-06item" bandwidth="64000" />
-		</AdaptationSet>
+    <!-- Video Adaptation Set -->
+    <AdaptationSet mimeType="video/mp4" startWithSAP="1" segmentAlignment="true" par="16:9">
+      <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" />
+      <ContentProtection
+        schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"
+        value="Widevine"
+        cenc:default_KID="ce43641a-061a-44fb-9d95-d986cfc9a68f">
+        <cenc:pssh>AAAAYnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAEISEM5DZBoGGkT7nZXZhs/Jpo8aDnF1aWNrcGxheW1lZGlhIhh6a05rR2dZYVJQdWRsZG1HejhtbWp3PT1I49yVmwY=</cenc:pssh>
+      </ContentProtection>
+      <SegmentTemplate
+        timescale="10000000"
+        duration="40000000"
+        startNumber="1000"
+        media="$RepresentationID$_Segment-$Number$.m4v"
+        initialization="$RepresentationID$_init.m4i" />
+      <Representation id="1750831600175item-01item" bandwidth="500000" width="480" height="270" frameRate="25" codecs="avc1.428016" scanType="progressive" sar="1:1"/>
+      <Representation id="1750831600175item-02item" bandwidth="1000000" width="640" height="360" frameRate="25" codecs="avc1.4d4020" scanType="progressive" sar="1:1"/>
+      <Representation id="1750831600175item-03item" bandwidth="2000000" width="960" height="540" frameRate="25" codecs="avc1.4d4029" scanType="progressive" sar="1:1"/>
+      <Representation id="1750831600175item-04item" bandwidth="3000000" width="1280" height="720" frameRate="25" codecs="avc1.640029" scanType="progressive" sar="1:1"/>
+      <Representation id="1750831600175item-05item" bandwidth="4000000" width="1920" height="1080" frameRate="25" codecs="avc1.64002a" scanType="progressive" sar="1:1"/>
+    </AdaptationSet>
 
-	</Period>
+    <!-- Audio Adaptation Set -->
+    <AdaptationSet mimeType="audio/mp4" startWithSAP="1" lang="may" segmentAlignment="true">
+      <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc" />
+      <ContentProtection
+        schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"
+        value="Widevine"
+        cenc:default_KID="ce43641a-061a-44fb-9d95-d986cfc9a68f">
+        <cenc:pssh>AAAAYnBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAEISEM5DZBoGGkT7nZXZhs/Jpo8aDnF1aWNrcGxheW1lZGlhIhh6a05rR2dZYVJQdWRsZG1HejhtbWp3PT1I49yVmwY=</cenc:pssh>
+      </ContentProtection>
+      <SegmentTemplate
+        timescale="10000000"
+        duration="40000000"
+        startNumber="1000"
+        media="$RepresentationID$_Segment-$Number$.m4a"
+        initialization="$RepresentationID$_init.m4i" />
+      <Representation id="1750831600175item-06item" bandwidth="64000" audioSamplingRate="48000" codecs="mp4a.40.5" />
+    </AdaptationSet>
+
+  </Period>
 </MPD>
