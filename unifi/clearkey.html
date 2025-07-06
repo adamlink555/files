@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ClearKey Multi-Key JSON</title>
+</head>
+<body>
+
+<h2>ClearKey Keys</h2>
+
+<script id="clearkey-keys" type="application/json">
+{
+  "keys": [
+    {
+      "kty": "oct",
+      "kid": "Lsv_QmyfQrOQQMVJC0wrAw",
+      "k": "HaZlqAxrG7XPeEsAodDtOw"
+    },
+    {
+      "kty": "oct",
+      "kid": "l55yoHDsQ3upLFl8KHrLrQ",
+      "k": "f0223lJLLlHIf2FWb_dwOQ"
+    }
+  ],
+  "type": "temporary"
+}
+</script>
+
+<script>
+  // JavaScript: Read the embedded JSON
+  const clearkeyJson = JSON.parse(document.getElementById('clearkey-keys').textContent);
+  console.log('Loaded ClearKey JSON:', clearkeyJson);
+</script>
+
+</body>
+</html>
