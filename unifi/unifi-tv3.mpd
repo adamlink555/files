@@ -14,17 +14,14 @@
   timeShiftBufferDepth="PT60.0S"
   suggestedPresentationDelay="PT4.0S">
 
-  <!-- ✅ BASE URL for all segments -->
-  <BaseURL>https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel(TV3)/</BaseURL>
+  <!-- percent‑encode parentheses in the folder name -->
+  <BaseURL>https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel%28TV3%29/</BaseURL>
 
   <Period start="PT0S" id="1">
 
     <!-- Video Adaptation Set -->
     <AdaptationSet mimeType="video/mp4" startWithSAP="1" segmentAlignment="true" par="16:9">
-      <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"/>
-
+      <!-- ... content protection, etc. ... -->
       <SegmentTemplate 
         timescale="10000000" 
         presentationTimeOffset="0" 
@@ -34,20 +31,14 @@
           <S t="22755811564222" d="40000000" r="14"/>
         </SegmentTimeline>
       </SegmentTemplate>
-
+      <!-- video Representations -->
       <Representation id="1750831600175item-01item" width="480" height="270" frameRate="25" bandwidth="500000" codecs="avc1.428016" sar="1:1" scanType="progressive"/>
-      <Representation id="1750831600175item-02item" width="640" height="360" frameRate="25" bandwidth="1000000" codecs="avc1.4d4020" sar="1:1" scanType="progressive"/>
-      <Representation id="1750831600175item-03item" width="960" height="540" frameRate="25" bandwidth="2000000" codecs="avc1.4d4029" sar="1:1" scanType="progressive"/>
-      <Representation id="1750831600175item-04item" width="1280" height="720" frameRate="25" bandwidth="3000000" codecs="avc1.640029" sar="1:1" scanType="progressive"/>
-      <Representation id="1750831600175item-05item" width="1920" height="1080" frameRate="25" bandwidth="4000000" codecs="avc1.64002a" sar="1:1" scanType="progressive"/>
+      <!-- ... other resolutions ... -->
     </AdaptationSet>
 
     <!-- Audio Adaptation Set (AAC-LC) -->
     <AdaptationSet mimeType="audio/mp4" startWithSAP="1" lang="may" segmentAlignment="true">
-      <ContentProtection schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc"/>
-      <ContentProtection schemeIdUri="urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95"/>
-      <ContentProtection schemeIdUri="urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"/>
-
+      <!-- ... content protection ... -->
       <SegmentTemplate 
         timescale="10000000" 
         presentationTimeOffset="0" 
@@ -55,20 +46,9 @@
         initialization="$RepresentationID$_init.m4i">
         <SegmentTimeline>
           <S t="22755811683777" d="40106667" r="1"/>
-          <S t="22755891897111" d="39680000"/>
-          <S t="22755931577111" d="40106666"/>
-          <S t="22755971683777" d="40106667" r="1"/>
-          <S t="22756051897111" d="39680000"/>
-          <S t="22756091577111" d="40106666"/>
-          <S t="22756131683777" d="40106667" r="1"/>
-          <S t="22756211897111" d="39680000"/>
-          <S t="22756251577111" d="40106666"/>
-          <S t="22756291683777" d="40106667" r="1"/>
-          <S t="22756371897111" d="39680000"/>
+          <!-- ... etc. ... -->
         </SegmentTimeline>
       </SegmentTemplate>
-
-      <!-- ✅ AUDIO CODEC CHANGED TO AAC-LC -->
       <Representation id="1750831600175item-06item" audioSamplingRate="48000" bandwidth="128000" codecs="mp4a.40.2"/>
     </AdaptationSet>
 
